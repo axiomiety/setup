@@ -28,6 +28,11 @@ class packages {
   package { "git":
     ensure  => present,
     require => Exec["apt-get update"],
+    }
+	
+  package { "gdb":
+    ensure  => present,
+    require => Exec["apt-get update"],
     }  
     
   package { "python3":
@@ -36,11 +41,6 @@ class packages {
     }
 
   package { "python3-pip":
-    ensure  => present,
-    require => Exec["apt-get update"],
-    }
-    
-  package { "python3-venv":
     ensure  => present,
     require => Exec["apt-get update"],
     }
